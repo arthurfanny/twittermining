@@ -1,0 +1,220 @@
+{
+  "axes": [
+    {
+      "scale": "x",
+      "type": "x"
+    },
+    {
+      "scale": "y",
+      "type": "y"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "col": "data",
+          "idx": "Arthur",
+          "val": 294
+        },
+        {
+          "col": "data",
+          "idx": "o",
+          "val": 96
+        },
+        {
+          "col": "data",
+          "idx": "\u00e9",
+          "val": 80
+        },
+        {
+          "col": "data",
+          "idx": "e",
+          "val": 72
+        },
+        {
+          "col": "data",
+          "idx": "\u00e1",
+          "val": 63
+        },
+        {
+          "col": "data",
+          "idx": "\u00e3",
+          "val": 62
+        },
+        {
+          "col": "data",
+          "idx": "\u2026",
+          "val": 57
+        },
+        {
+          "col": "data",
+          "idx": "arthur",
+          "val": 54
+        },
+        {
+          "col": "data",
+          "idx": "se",
+          "val": 37
+        },
+        {
+          "col": "data",
+          "idx": "n",
+          "val": 36
+        },
+        {
+          "col": "data",
+          "idx": "rie",
+          "val": 36
+        },
+        {
+          "col": "data",
+          "idx": "na",
+          "val": 35
+        },
+        {
+          "col": "data",
+          "idx": "\ud83d",
+          "val": 34
+        },
+        {
+          "col": "data",
+          "idx": "la",
+          "val": 33
+        },
+        {
+          "col": "data",
+          "idx": "Aguiar",
+          "val": 33
+        },
+        {
+          "col": "data",
+          "idx": "http://t.co/HtBwbMbdtY",
+          "val": 33
+        },
+        {
+          "col": "data",
+          "idx": "\u00e7",
+          "val": 30
+        },
+        {
+          "col": "data",
+          "idx": "que",
+          "val": 27
+        },
+        {
+          "col": "data",
+          "idx": "\u00ed",
+          "val": 27
+        },
+        {
+          "col": "data",
+          "idx": "novela",
+          "val": 24
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "table",
+      "transform": [
+        {
+          "keys": [
+            "data.idx"
+          ],
+          "type": "facet"
+        },
+        {
+          "type": "stats",
+          "value": "data.val"
+        }
+      ]
+    }
+  ],
+  "height": 500,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "table",
+        "transform": [
+          {
+            "keys": [
+              "data.col"
+            ],
+            "type": "facet"
+          },
+          {
+            "height": "data.val",
+            "point": "data.idx",
+            "type": "stack"
+          }
+        ]
+      },
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "fill": {
+                "field": "data.col",
+                "scale": "color"
+              },
+              "width": {
+                "band": true,
+                "offset": -1,
+                "scale": "x"
+              },
+              "x": {
+                "field": "data.idx",
+                "scale": "x"
+              },
+              "y": {
+                "field": "y",
+                "scale": "y"
+              },
+              "y2": {
+                "field": "y2",
+                "scale": "y"
+              }
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "type": "group"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.idx"
+      },
+      "name": "x",
+      "range": "width",
+      "type": "ordinal",
+      "zero": false
+    },
+    {
+      "domain": {
+        "data": "stats",
+        "field": "sum"
+      },
+      "name": "y",
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.col"
+      },
+      "name": "color",
+      "range": "category20",
+      "type": "ordinal"
+    }
+  ],
+  "width": 960
+}
